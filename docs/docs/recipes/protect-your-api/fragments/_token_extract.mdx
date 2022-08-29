@@ -82,7 +82,7 @@ from validator import MyLogtoBearerTokenValidator
 app = Flask(__name__)
 
 require_auth = ResourceProtector()
-require_oauth.register_token_validator(MyLogtoBearerTokenValidator())
+require_auth.register_token_validator(MyLogtoBearerTokenValidator())
 
 @app.route("/api/foo")
 @require_auth()
